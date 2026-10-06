@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SMS Phishing Checker</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <h1>SMS Phishing Checker</h1>
+  <p class="hint">Paste the SMS below and click Analyze.</p>
+
+  <textarea id="sms-input" rows="6" placeholder="Paste SMS here..."></textarea>
+
+  <div class="buttons">
+    <button id="analyze-btn">Analyze</button>
+    <button id="clear-btn" class="secondary">Clear</button>
+  </div>
+
+  <div id="result" hidden>
+    <div id="verdict"></div>
+    <div class="bar"><div id="bar-fill"></div></div>
+    <h2>Why?</h2>
+    <ul id="reasons"></ul>
+  </div>
+
+  <script src="rules.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
