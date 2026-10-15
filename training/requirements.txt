@@ -1,2 +1,91 @@
+# ==============================================================
+#  SETUP GUIDE FOR THE SMS PHISHING CHECKER
+# ==============================================================
+#  You only need to do this if you will run the Python scripts
+#  (training/fix_csv.py and training/train.py).
+#  If you only edit the extension (HTML/CSS/JS) or the Google Sheet,
+#  you can skip all of this.
+#
+#  The two packages this project needs are listed at the very
+#  bottom of this file:
+#     pandas        -> reads and cleans the CSV data (like Excel, but in code)
+#     scikit-learn  -> the machine learning toolbox that trains the model
+#
+# --------------------------------------------------------------
+#  STEP 1: INSTALL PYTHON
+# --------------------------------------------------------------
+#  pip (the tool that installs packages) comes automatically with Python,
+#  so you do not need to install it separately.
+#
+#  WINDOWS
+#    1. Go to https://www.python.org/downloads/ and download Python 3.10 or newer.
+#    2. Run the installer.
+#    3. IMPORTANT: on the first screen, tick the box
+#       "Add python.exe to PATH" BEFORE clicking Install.
+#       (Forgetting this is the number one cause of problems.)
+#
+#  MAC
+#    1. Download Python 3.10 or newer from https://www.python.org/downloads/
+#       and run the installer.
+#    (On a Mac, type python3 and pip3 instead of python and pip in
+#     any command below, until you reach Step 3.)
+#
+#  LINUX / WSL (Ubuntu)
+#    Open a terminal and run:
+#       sudo apt update
+#       sudo apt install python3 python3-pip python3-venv
+#
+#  CHECK IT WORKED
+#    Close and reopen your terminal, then type:
+#       python --version
+#       pip --version
+#    You should see a version number for each (Python 3.10 or higher).
+#    If "python" is not found on Windows, try: py --version
+#
+# --------------------------------------------------------------
+#  STEP 2: GET THE PROJECT AND OPEN A TERMINAL IN IT
+# --------------------------------------------------------------
+#    git clone https://github.com/YOUR-USERNAME/sms-phishing-checker.git
+#    cd sms-phishing-checker
+#
+#  (In VS Code: open the project folder, then Terminal > New Terminal.)
+#  Every command below is run from this main project folder.
+#
+# --------------------------------------------------------------
+#  STEP 3: CREATE A VIRTUAL ENVIRONMENT
+# --------------------------------------------------------------
+#  A virtual environment is a private box for this project's packages,
+#  so they don't mix with other things on your computer.
+#
+#    python -m venv .venv
+#
+#  Now ACTIVATE it (do this every time you open a new terminal):
+#
+#    Windows (PowerShell):   .venv\Scripts\Activate.ps1
+#    Windows (cmd):          .venv\Scripts\activate.bat
+#    Mac / Linux / WSL:      source .venv/bin/activate
+#
+#  It worked if you see (.venv) at the start of your terminal line.
+# --------------------------------------------------------------
+#  STEP 4: INSTALL THE PACKAGES (do this once)
+# --------------------------------------------------------------
+#  With (.venv) showing, run:
+#
+#    pip install -r training/requirements.txt
+#
+#  This reads the list at the bottom of this file and installs it all.
+#  It can take a minute or two. Wait for "Successfully installed ...".
+#
+# --------------------------------------------------------------
+#  STEP 5: RUN THE SCRIPTS
+# --------------------------------------------------------------
+#    python training/fix_csv.py     (cleans data/sms_dataset.csv)
+#    python training/train.py       (trains the model, saves extension/model.json)
+#
+#  After training, reload the extension at chrome://extensions
+#  so it picks up the new model.json.
+# ==============================================================
+#  PACKAGES (pip installs everything below this line)
+# ==============================================================
 pandas
 scikit-learn
